@@ -87,11 +87,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase.Designer.cs">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceiveBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiveBalance.Designer.cs">
+      <DependentUpon>ReceiveBalance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sales.Designer.cs">
       <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSales.Designer.cs">
+      <DependentUpon>ViewSales.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
@@ -118,8 +136,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Purchase.resx">
+      <DependentUpon>Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceiveBalance.resx">
+      <DependentUpon>ReceiveBalance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSales.resx">
+      <DependentUpon>ViewSales.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MobileShopDataSet.xsc">
       <DependentUpon>MobileShopDataSet.xsd</DependentUpon>

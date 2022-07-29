@@ -43,6 +43,13 @@
             this.openingBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerCareof = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cnic = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openingBalanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerCareofDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblCustomersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mobileShopDataSet)).BeginInit();
@@ -74,7 +81,14 @@
             this.address,
             this.openingBalance,
             this.customerCareof,
-            this.Cnic});
+            this.Cnic,
+            this.customerIDDataGridViewTextBoxColumn,
+            this.customerNameDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.openingBalanceDataGridViewTextBoxColumn,
+            this.customerCareofDataGridViewTextBoxColumn,
+            this.cnicDataGridViewTextBoxColumn});
             this.guna2DataGridView1.DataSource = this.tblCustomersBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -86,11 +100,11 @@
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.EnableHeadersVisualStyles = false;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(25, 30);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(25, 44);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(786, 386);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(792, 372);
             this.guna2DataGridView1.TabIndex = 0;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -137,7 +151,7 @@
             // 
             // customerName
             // 
-            this.customerName.DataPropertyName = "customerName";
+            this.customerName.DataPropertyName = "customer Name";
             this.customerName.HeaderText = "customerName";
             this.customerName.Name = "customerName";
             // 
@@ -149,7 +163,7 @@
             // 
             // address
             // 
-            this.address.DataPropertyName = "address";
+            this.address.DataPropertyName = "Address";
             this.address.HeaderText = "address";
             this.address.Name = "address";
             // 
@@ -170,6 +184,49 @@
             this.Cnic.DataPropertyName = "Cnic";
             this.Cnic.HeaderText = "Cnic";
             this.Cnic.Name = "Cnic";
+            // 
+            // customerIDDataGridViewTextBoxColumn
+            // 
+            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "customerID";
+            this.customerIDDataGridViewTextBoxColumn.HeaderText = "customerID";
+            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
+            this.customerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "customerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // openingBalanceDataGridViewTextBoxColumn
+            // 
+            this.openingBalanceDataGridViewTextBoxColumn.DataPropertyName = "openingBalance";
+            this.openingBalanceDataGridViewTextBoxColumn.HeaderText = "openingBalance";
+            this.openingBalanceDataGridViewTextBoxColumn.Name = "openingBalanceDataGridViewTextBoxColumn";
+            // 
+            // customerCareofDataGridViewTextBoxColumn
+            // 
+            this.customerCareofDataGridViewTextBoxColumn.DataPropertyName = "customerCareof";
+            this.customerCareofDataGridViewTextBoxColumn.HeaderText = "customerCareof";
+            this.customerCareofDataGridViewTextBoxColumn.Name = "customerCareofDataGridViewTextBoxColumn";
+            // 
+            // cnicDataGridViewTextBoxColumn
+            // 
+            this.cnicDataGridViewTextBoxColumn.DataPropertyName = "Cnic";
+            this.cnicDataGridViewTextBoxColumn.HeaderText = "Cnic";
+            this.cnicDataGridViewTextBoxColumn.Name = "cnicDataGridViewTextBoxColumn";
             // 
             // CustomerView
             // 
@@ -193,12 +250,6 @@
         private MobileShopDataSet mobileShopDataSet;
         private System.Windows.Forms.BindingSource tblCustomersBindingSource;
         private MobileShopDataSetTableAdapters.tbl_CustomersTableAdapter tbl_CustomersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn openingBalanceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerCareofDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
@@ -206,5 +257,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn openingBalance;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerCareof;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cnic;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn openingBalanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerCareofDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnicDataGridViewTextBoxColumn;
     }
 }

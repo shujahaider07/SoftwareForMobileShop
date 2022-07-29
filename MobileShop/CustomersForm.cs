@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -13,7 +14,7 @@ namespace MobileShop
         {
             InitializeComponent();
             Searchtxt.KeyUp += Searchtxt_KeyUp;
-            
+
 
         }
 
@@ -21,7 +22,7 @@ namespace MobileShop
         {
             if (e.KeyCode == Keys.Escape)
             {
-                dataGridView1.RefreshEdit();    
+                dataGridView1.RefreshEdit();
 
 
             }
@@ -33,7 +34,7 @@ namespace MobileShop
         {
             AddCustomer();
             FetchId();
-
+            bindGridView();
         }
 
         public void AddCustomer()
@@ -76,7 +77,7 @@ namespace MobileShop
         public void bindGridView()
         {
             SqlConnection sql = new SqlConnection(cs);
-            String qry = "select * from tbl_customers";
+            String qry = "exec sp_ViewCustomers";
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -88,7 +89,7 @@ namespace MobileShop
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
             SqlConnection sql = new SqlConnection(cs);
-            string qry = "select * from  tbl_customers where Customername like '%"+ Searchtxt.Text + "%' ";
+            string qry = "select * from  tbl_customers where Customername like '%" + Searchtxt.Text + "%' ";
 
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
@@ -98,11 +99,12 @@ namespace MobileShop
 
         private void CustomersForm_Activated(object sender, EventArgs e)
         {
-            bindGridView(); 
+            bindGridView();
+            styleGridView2();
         }
 
-   
-       public void ClearCustomerData()
+
+        public void ClearCustomerData()
         {
             nametxt.Text = "";
             addtxt.Text = "";
@@ -114,6 +116,22 @@ namespace MobileShop
 
         }
 
+        public void styleGridView2()
+        {
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Teal;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Empty;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Empty;
+            dataGridView1.BackgroundColor = Color.Azure;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView1.EnableHeadersVisualStyles = true;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Calibri", 10);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
         public void FetchId()
         {
             SqlConnection sql = new SqlConnection(cs);
@@ -122,10 +140,85 @@ namespace MobileShop
             DataTable dt = new DataTable();
             da.Fill(dt);
             customeridtxt.Text = dt.Rows[0][0].ToString();
+        }
+
+        private void Editbtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection sql = new SqlConnection(cs);
+            var confirmResult = MessageBox.Show("Are you sure to Edit this item ??", "Confirm Edit!!", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+
+                String qry = "update tbl_customers set customerName = '" + nametxt.Text + "' , phone = '" + phonetxt.Text + "' , address = '" + addtxt.Text + "' , openingbalance = '" + openingbalancetxt.Text + "' , customerCareOF = '" + caretxt.Text + "' , cnic = '" + InvestotcnicTXt.Text + "' where customerId = '" + customeridtxt.Text + "'   ";
+                SqlCommand cmd = new SqlCommand(qry, sql);
+                sql.Open();
+                int a = cmd.ExecuteNonQuery();
+                if (a > 0)
+                {
+                    MessageBox.Show("Edited");
+                    bindGridView();
+                }
+                customeridtxt.Text = "";
+                ClearCustomerData();
+                sql.Close();
+
+            }
+            else
+            {
+
+
+            }
 
 
         }
 
-      
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+            dataGridView1.CurrentRow.Selected = true;
+
+            customeridtxt.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            nametxt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            phonetxt.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            InvestotcnicTXt.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            caretxt.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            openingbalancetxt.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            addtxt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+        }
+
+        private void delbtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection sql = new SqlConnection(cs);
+            var confirmResult = MessageBox.Show("Are you sure to delete this item ??", "Confirm Delete!!", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+
+                String qry = "delete from tbl_Customers where customerid  = '" + customeridtxt.Text + "'  ";
+                SqlCommand cmd = new SqlCommand(qry, sql);
+                sql.Open();
+                int a = cmd.ExecuteNonQuery();
+                if (a > 0)
+                {
+                    MessageBox.Show("Deleted");
+                    bindGridView();
+                }
+
+                sql.Close();
+
+            }
+            else
+            {
+
+
+            }
+
+
+
+
+
+        }
     }
 }

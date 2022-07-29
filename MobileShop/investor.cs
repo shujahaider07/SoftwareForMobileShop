@@ -92,8 +92,26 @@ namespace MobileShop
         private void investor_Load(object sender, EventArgs e)
         {
             bindGridView();
+            styleGridView2();
             fetchID();
         }
+
+        public void styleGridView2()
+        {
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Teal;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Empty;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Empty;
+            dataGridView1.BackgroundColor = Color.Azure;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView1.EnableHeadersVisualStyles = true;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("calibri", 9);
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
 
         public void fetchID()
         {

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MobileShop
@@ -19,8 +12,8 @@ namespace MobileShop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -44,7 +37,7 @@ namespace MobileShop
         private void label10_Click(object sender, EventArgs e)
         {
             CustomerView cv = new CustomerView();
-            cv.ShowDialog(); 
+            cv.ShowDialog();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -68,7 +61,7 @@ namespace MobileShop
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             investor i = new investor();
-            i.Show(); 
+            i.Show();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -81,6 +74,41 @@ namespace MobileShop
         {
             Sales sales = new Sales();
             sales.Show();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Purchase p = new Purchase();
+            p.Show();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Purchase p = new Purchase();
+            p.Show();
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            ViewSales s = new ViewSales();
+            s.Show();
+        }
+
+        private void pictureBox12_Click_1(object sender, EventArgs e)
+        {
+            ViewSales s = new ViewSales();
+            s.Show();
+        }
+
+        private void pictureBox42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            ReceiveBalance receiveBalance = new ReceiveBalance();
+            receiveBalance.Show();
         }
     }
 }

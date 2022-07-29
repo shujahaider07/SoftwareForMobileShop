@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+
+
+namespace MobileShop
+{
+    public partial class ViewSales : Form
+    {
+        public ViewSales()
+        {
+            InitializeComponent();
+        }
+        String cs = ConfigurationManager.ConnectionStrings["dbcs"].ConnectionString;
+        private void ViewSales_Load(object sender, EventArgs e)
+        {
+            SqlConnection sql = new SqlConnection(cs);
+            String qry = "exec sp_ViewSaleByName";
+            SqlDataAdapter da = new SqlDataAdapter(qry, sql);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+
+        private void selectByCmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection sql = new SqlConnection(cs);
+
+            if (selectByCmb.Text == "Sales By Name")
+            {
+               
+                String qry = "exec sp_ViewSaleByName";
+                SqlDataAdapter da = new SqlDataAdapter(qry, sql);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+            }
+            else if (selectByCmb.Text == "Sales By Mobile")
+            {
+                String qry = "exec sp_ViewSaleByMobile";
+                SqlDataAdapter da = new SqlDataAdapter(qry, sql);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void searchTxt_TextChanged(object sender, EventArgs e)
+        {
+            //SqlConnection sql = new SqlConnection(cs);
+            //String qry = "select * from ";
+        }
+    }
+}
