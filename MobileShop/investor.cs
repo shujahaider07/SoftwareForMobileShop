@@ -25,12 +25,12 @@ namespace MobileShop
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            AddCustomer();
+            AddInvestor();
             bindGridView();
             fetchID();
         }
 
-        public void AddCustomer()
+        public void AddInvestor()
         {
             SqlConnection sql = new SqlConnection(cs);
             String qry = "insert into tbl_investors values (@id, @investorname , @investorphone , @investoraddress  , @investoropeningbalance , @investorcareOf , @cnic )";
@@ -87,6 +87,7 @@ namespace MobileShop
         private void investor_Activated(object sender, EventArgs e)
         {
             bindGridView();
+            
         }
 
         private void investor_Load(object sender, EventArgs e)
@@ -99,7 +100,7 @@ namespace MobileShop
         public void styleGridView2()
         {
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Teal;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Empty;
             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Empty;

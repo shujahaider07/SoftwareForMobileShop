@@ -74,6 +74,12 @@
     <Compile Include="investor.Designer.cs">
       <DependentUpon>investor.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvestorRemaining.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvestorRemaining.Designer.cs">
+      <DependentUpon>InvestorRemaining.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mobiles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,11 +105,23 @@
     <Compile Include="ReceiveBalance.Designer.cs">
       <DependentUpon>ReceiveBalance.cs</DependentUpon>
     </Compile>
+    <Compile Include="RemainingCustomerBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemainingCustomerBalance.Designer.cs">
+      <DependentUpon>RemainingCustomerBalance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Sales.Designer.cs">
       <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInvestors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInvestors.Designer.cs">
+      <DependentUpon>ViewInvestors.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewSales.cs">
       <SubType>Form</SubType>
@@ -122,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="investor.resx">
       <DependentUpon>investor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvestorRemaining.resx">
+      <DependentUpon>InvestorRemaining.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mobiles.resx">
       <DependentUpon>Mobiles.cs</DependentUpon>
@@ -142,8 +163,14 @@
     <EmbeddedResource Include="ReceiveBalance.resx">
       <DependentUpon>ReceiveBalance.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RemainingCustomerBalance.resx">
+      <DependentUpon>RemainingCustomerBalance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInvestors.resx">
+      <DependentUpon>ViewInvestors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewSales.resx">
       <DependentUpon>ViewSales.cs</DependentUpon>

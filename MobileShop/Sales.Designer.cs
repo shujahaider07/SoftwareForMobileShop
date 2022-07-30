@@ -44,6 +44,10 @@
             this.previousbalTxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.careofTxt = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.addressTxt = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -70,8 +74,6 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
-            this.cashTxt = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.paymentMethodCmb = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -187,7 +189,7 @@
             // Phonetxt
             // 
             this.Phonetxt.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.Phonetxt.Location = new System.Drawing.Point(416, 57);
+            this.Phonetxt.Location = new System.Drawing.Point(416, 56);
             this.Phonetxt.Name = "Phonetxt";
             this.Phonetxt.Size = new System.Drawing.Size(139, 27);
             this.Phonetxt.TabIndex = 11;
@@ -206,7 +208,7 @@
             // CnicTxt
             // 
             this.CnicTxt.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.CnicTxt.Location = new System.Drawing.Point(561, 57);
+            this.CnicTxt.Location = new System.Drawing.Point(1015, 56);
             this.CnicTxt.Name = "CnicTxt";
             this.CnicTxt.Size = new System.Drawing.Size(167, 27);
             this.CnicTxt.TabIndex = 13;
@@ -216,7 +218,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label7.Location = new System.Drawing.Point(557, 33);
+            this.label7.Location = new System.Drawing.Point(1011, 32);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 20);
             this.label7.TabIndex = 12;
@@ -225,7 +227,7 @@
             // previousbalTxt
             // 
             this.previousbalTxt.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.previousbalTxt.Location = new System.Drawing.Point(734, 56);
+            this.previousbalTxt.Location = new System.Drawing.Point(1188, 56);
             this.previousbalTxt.Name = "previousbalTxt";
             this.previousbalTxt.Size = new System.Drawing.Size(148, 27);
             this.previousbalTxt.TabIndex = 15;
@@ -235,7 +237,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label8.Location = new System.Drawing.Point(730, 33);
+            this.label8.Location = new System.Drawing.Point(1184, 33);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 20);
             this.label8.TabIndex = 14;
@@ -243,13 +245,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Controls.Add(this.careofTxt);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.addressTxt);
             this.groupBox1.Controls.Add(this.CnicTxt);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.Phonetxt);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.previousbalTxt);
             this.groupBox1.Controls.Add(this.CustomerIdTXT);
@@ -262,6 +268,44 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customers Information:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label24.Location = new System.Drawing.Point(803, 32);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(57, 20);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "Care of";
+            // 
+            // careofTxt
+            // 
+            this.careofTxt.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.careofTxt.Location = new System.Drawing.Point(807, 56);
+            this.careofTxt.Name = "careofTxt";
+            this.careofTxt.Size = new System.Drawing.Size(202, 27);
+            this.careofTxt.TabIndex = 20;
+            this.careofTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label23.Location = new System.Drawing.Point(557, 33);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(62, 20);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "Address";
+            // 
+            // addressTxt
+            // 
+            this.addressTxt.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.addressTxt.Location = new System.Drawing.Point(561, 56);
+            this.addressTxt.Name = "addressTxt";
+            this.addressTxt.Size = new System.Drawing.Size(240, 27);
+            this.addressTxt.TabIndex = 18;
+            this.addressTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // checkBox1
             // 
@@ -509,7 +553,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(140, 209);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(606, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(614, 200);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.Visible = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -547,25 +591,6 @@
             this.label15.TabIndex = 31;
             this.label15.Text = "Total";
             // 
-            // cashTxt
-            // 
-            this.cashTxt.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.cashTxt.Location = new System.Drawing.Point(141, 49);
-            this.cashTxt.Name = "cashTxt";
-            this.cashTxt.Size = new System.Drawing.Size(123, 27);
-            this.cashTxt.TabIndex = 38;
-            this.cashTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label18.Location = new System.Drawing.Point(142, 26);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(40, 20);
-            this.label18.TabIndex = 37;
-            this.label18.Text = "Cash";
-            // 
             // paymentMethodCmb
             // 
             this.paymentMethodCmb.Font = new System.Drawing.Font("Segoe UI", 11F);
@@ -575,7 +600,7 @@
             "Cheque",
             "EasyPaisa",
             "JazzCash"});
-            this.paymentMethodCmb.Location = new System.Drawing.Point(270, 48);
+            this.paymentMethodCmb.Location = new System.Drawing.Point(140, 48);
             this.paymentMethodCmb.Name = "paymentMethodCmb";
             this.paymentMethodCmb.Size = new System.Drawing.Size(188, 28);
             this.paymentMethodCmb.TabIndex = 39;
@@ -584,7 +609,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label19.Location = new System.Drawing.Point(266, 24);
+            this.label19.Location = new System.Drawing.Point(136, 24);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(121, 20);
             this.label19.TabIndex = 40;
@@ -594,7 +619,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label20.Location = new System.Drawing.Point(460, 23);
+            this.label20.Location = new System.Drawing.Point(330, 23);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(78, 20);
             this.label20.TabIndex = 42;
@@ -607,7 +632,7 @@
             this.salesTypeCmb.Items.AddRange(new object[] {
             "Cash",
             "Installment"});
-            this.salesTypeCmb.Location = new System.Drawing.Point(464, 47);
+            this.salesTypeCmb.Location = new System.Drawing.Point(334, 47);
             this.salesTypeCmb.Name = "salesTypeCmb";
             this.salesTypeCmb.Size = new System.Drawing.Size(188, 28);
             this.salesTypeCmb.TabIndex = 41;
@@ -623,9 +648,7 @@
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.salesTypeCmb);
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.cashTxt);
             this.groupBox3.Controls.Add(this.paymentMethodCmb);
-            this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.groupBox3.Location = new System.Drawing.Point(0, 610);
@@ -769,8 +792,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox cashTxt;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox paymentMethodCmb;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
@@ -793,5 +814,9 @@
         private System.Windows.Forms.TextBox stockTxt;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox installmentTxt;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox careofTxt;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox addressTxt;
     }
 }

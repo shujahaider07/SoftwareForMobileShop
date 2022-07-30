@@ -110,5 +110,23 @@ namespace MobileShop
             ReceiveBalance receiveBalance = new ReceiveBalance();
             receiveBalance.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RemainingCustomerBalance frm = new RemainingCustomerBalance();
+            frm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            InvestorRemaining frm = new InvestorRemaining();
+            frm.Show();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            ViewInvestors vi = new ViewInvestors();
+            vi.Show();
+        }
     }
 }

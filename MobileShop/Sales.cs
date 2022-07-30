@@ -49,13 +49,14 @@ namespace MobileShop
 
             dataGridView3.DataSource = dt;
 
+
             FetchId();
         }
 
         public void CustomerGrid()
         {
             SqlConnection sql = new SqlConnection(cs);
-            String qry = "select * from tbl_Customers";
+            String qry = "exec sp_CustomerRemaining";
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -68,15 +69,18 @@ namespace MobileShop
             CustomerIdTXT.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             Cnametxt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             Phonetxt.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            CnicTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-            previousbalTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            addressTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            careofTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            CnicTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            previousbalTxt.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+
             dataGridView1.Visible = false;
         }
 
         public void BindMobiles()
         {
             SqlConnection sql = new SqlConnection(cs);
-            String qry = "select * from tbl_Mobiles";
+            String qry = "exec sp_AvailableStock";
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -86,14 +90,14 @@ namespace MobileShop
         public void saveBill()
         {
             SqlConnection sql = new SqlConnection(cs);
-            String qry = "insert into tbl_Sales values (@salesID, @customerID, @salesDate, @netAmount, @cash, @paymentMethod, @salesType)";
+            String qry = "insert into tbl_Sales values (@salesID, @customerID, @salesDate, @netAmount, @paymentMethod, @salesType)";
             sql.Open();
             SqlCommand cmd = new SqlCommand(qry, sql);
             cmd.Parameters.AddWithValue("@salesID", salesIDTxt.Text);
             cmd.Parameters.AddWithValue("@customerID", CustomerIdTXT.Text);
             cmd.Parameters.AddWithValue("@salesDate", dateTimePicker1.Value);
             cmd.Parameters.AddWithValue("@netAmount", totalTxt.Text);
-            cmd.Parameters.AddWithValue("@cash", cashTxt.Text);
+            //cmd.Parameters.AddWithValue("@cash", cashTxt.Text);
             cmd.Parameters.AddWithValue("@paymentMethod", paymentMethodCmb.Text);
             cmd.Parameters.AddWithValue("@salesType", salesTypeCmb.Text);
 
@@ -160,7 +164,7 @@ namespace MobileShop
             IEMitxt.Text = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
             purchaseRatetxt.Text = dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
             Ratetxt.Text = dataGridView2.Rows[e.RowIndex].Cells[5].Value.ToString();
-            stockTxt.Text = dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString();
+            stockTxt.Text = dataGridView2.Rows[e.RowIndex].Cells[7].Value.ToString();
             dataGridView2.Visible = false;
         }
 
@@ -197,24 +201,32 @@ namespace MobileShop
 
         private void installmentTxt_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            try
             {
-                if (installmentTxt.Text != "0")
+                if (e.KeyCode == Keys.Enter)
                 {
-                    double installment = Convert.ToDouble(installmentTxt.Text);
-                    double amount = Convert.ToDouble(Ratetxt.Text) * Convert.ToDouble(QuantityTxt.Text);
-                    double percentage = installment / 100 * amount;
+                    if (installmentTxt.Text != "0")
+                    {
+                        double installment = Convert.ToDouble(installmentTxt.Text);
+                        double amount = Convert.ToDouble(Ratetxt.Text) * Convert.ToDouble(QuantityTxt.Text);
+                        double percentage = installment / 100 * amount;
 
-                    double final = Convert.ToDouble(amountTxt.Text) + percentage;
-                    amountTxt.Text = final.ToString();
-                }
-                else
-                {
-                    double amount = Convert.ToDouble(Ratetxt.Text) * Convert.ToDouble(QuantityTxt.Text);
-                    amountTxt.Text = amount.ToString();
-                   
+                        double final = Convert.ToDouble(amountTxt.Text) + percentage;
+                        amountTxt.Text = final.ToString();
+                    }
+                    else
+                    {
+                        double amount = Convert.ToDouble(Ratetxt.Text) * Convert.ToDouble(QuantityTxt.Text);
+                        amountTxt.Text = amount.ToString();
+
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)

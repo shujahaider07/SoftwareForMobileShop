@@ -1,6 +1,6 @@
 ﻿namespace MobileShop
 {
-    partial class CustomerView
+    partial class ViewInvestors
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tblCustomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mobileShopDataSet = new MobileShop.MobileShopDataSet();
-            this.tbl_CustomersTableAdapter = new MobileShop.MobileShopDataSetTableAdapters.tbl_CustomersTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.selectByCmb = new System.Windows.Forms.ComboBox();
             this.searchTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.tblCustomersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mobileShopDataSet)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tblCustomersBindingSource
-            // 
-            this.tblCustomersBindingSource.DataMember = "tbl_Customers";
-            this.tblCustomersBindingSource.DataSource = this.mobileShopDataSet;
-            // 
-            // mobileShopDataSet
-            // 
-            this.mobileShopDataSet.DataSetName = "MobileShopDataSet";
-            this.mobileShopDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbl_CustomersTableAdapter
-            // 
-            this.tbl_CustomersTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -69,7 +49,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1295, 62);
-            this.panel1.TabIndex = 9;
+            this.panel1.TabIndex = 6;
             // 
             // label3
             // 
@@ -109,18 +89,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.label2.Location = new System.Drawing.Point(12, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 20);
+            this.label2.Size = new System.Drawing.Size(122, 20);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Search Customers  :";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1295, 382);
-            this.dataGridView1.TabIndex = 10;
+            this.label2.Text = "Search Investors :";
             // 
             // label1
             // 
@@ -132,23 +103,31 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1295, 43);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "View Customers";
+            this.label1.TabIndex = 5;
+            this.label1.Text = "View Investors";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // CustomerView
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 111);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1295, 382);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // ViewInvestors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1295, 490);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Name = "CustomerView";
-            this.Text = "CustomerView";
-            this.Load += new System.EventHandler(this.CustomerView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblCustomersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mobileShopDataSet)).EndInit();
+            this.Name = "ViewInvestors";
+            this.Text = "ViewInvestors";
+            this.Load += new System.EventHandler(this.ViewInvestors_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -157,15 +136,13 @@
         }
 
         #endregion
-        private MobileShopDataSet mobileShopDataSet;
-        private System.Windows.Forms.BindingSource tblCustomersBindingSource;
-        private MobileShopDataSetTableAdapters.tbl_CustomersTableAdapter tbl_CustomersTableAdapter;
+
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox selectByCmb;
         private System.Windows.Forms.TextBox searchTxt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

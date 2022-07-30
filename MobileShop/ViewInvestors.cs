@@ -6,21 +6,19 @@ using System.Windows.Forms;
 
 namespace MobileShop
 {
-    public partial class CustomerView : Form
+    public partial class ViewInvestors : Form
     {
-        public CustomerView()
+        public ViewInvestors()
         {
             InitializeComponent();
         }
-
-
         String cs = ConfigurationManager.ConnectionStrings["dbcs"].ConnectionString;
-        private void CustomerView_Load(object sender, EventArgs e)
+
+        private void ViewInvestors_Load(object sender, EventArgs e)
         {
+
             BindInvestors();
-
         }
-
         public void BindInvestors()
         {
 
@@ -34,12 +32,26 @@ namespace MobileShop
 
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {
+
             SqlConnection sql = new SqlConnection(cs);
-            string qry = "select * from  tbl_Customers where CustomerName like '%" + searchTxt.Text + "%' ";    
+            string qry = "select * from  tbl_investors where investorname like '%" + searchTxt.Text + "%' ";
+
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

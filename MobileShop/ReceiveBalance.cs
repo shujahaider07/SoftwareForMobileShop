@@ -40,6 +40,7 @@ namespace MobileShop
             if (a > 0)
             {
                 MessageBox.Show("Inserted");
+                BindGridView();
             }
             else
             {
@@ -73,7 +74,7 @@ namespace MobileShop
         public void BindRecGrid()
         {
             SqlConnection sql = new SqlConnection(cs);
-            String qry = "select customerid , customername , openingbalance from tbl_Customers";
+            String qry = "exec sp_CustomerRemaining";
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -86,7 +87,7 @@ namespace MobileShop
             dataGridView2.CurrentRow.Selected = true;
             CustomerIdTXT.Text = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
             Cnametxt.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
-            previousbalTxt.Text = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
+            previousbalTxt.Text = dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString();
             dataGridView2.Visible = false;
         }
 
@@ -94,30 +95,22 @@ namespace MobileShop
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //double previousBal = Convert.ToInt32(previousbalTxt.Text) - Convert.ToInt32(remainingBalanceTxt.Text);
+                double previousBal = Convert.ToDouble(previousbalTxt.Text);
+                double receiveBal = Convert.ToDouble(receivingBalanceTxt.Text);
 
-                //receivingBalanceTxt.Text = previousBal.ToString();
+                double final = previousBal - receiveBal;
 
-                double previousBal = Convert.ToInt32(previousbalTxt.Text);
-                double receiveBal = Convert.ToInt32(receivingBalanceTxt.Text);
-
-
-                double final = receiveBal - previousBal;
-
-                receivingBalanceTxt.Text = final.ToString();
+                remainingBalanceTxt.Text = final.ToString();
 
 
             }
         }
 
-        
-    
-        
         public void BindGridView()
         {
             SqlConnection sql = new SqlConnection(cs);
             String qry = "exec sp_ViewReceived";
-            SqlDataAdapter da = new SqlDataAdapter(qry,sql);
+            SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -125,11 +118,11 @@ namespace MobileShop
 
         }
 
-       public void fetchReceiveID()
+        public void fetchReceiveID()
         {
             SqlConnection sql = new SqlConnection(cs);
             String qry = "select count(tbl_Receive.receiveID)+1 from tbl_Receive";
-            SqlDataAdapter da = new SqlDataAdapter(qry,sql);
+            SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
             receiveIDTxt.Text = dt.Rows[0][0].ToString();

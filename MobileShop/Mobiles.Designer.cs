@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mobiles));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.Searchtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,19 +44,15 @@
             this.mobilenametxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.delbtn = new Guna.UI2.WinForms.Guna2Button();
+            this.Editbtn = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 320);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1345, 346);
-            this.dataGridView1.TabIndex = 16;
             // 
             // label3
             // 
@@ -98,6 +93,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Controls.Add(this.delbtn);
+            this.panel1.Controls.Add(this.Editbtn);
+            this.panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.panel1.Controls.Add(this.saleRatetxt);
             this.panel1.Controls.Add(this.openingStocktxt);
             this.panel1.Controls.Add(this.label4);
@@ -193,7 +191,7 @@
             this.ModelTxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ModelTxt.ForeColor = System.Drawing.Color.Black;
             this.ModelTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ModelTxt.Location = new System.Drawing.Point(25, 124);
+            this.ModelTxt.Location = new System.Drawing.Point(26, 124);
             this.ModelTxt.Name = "ModelTxt";
             this.ModelTxt.PasswordChar = '\0';
             this.ModelTxt.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -233,7 +231,7 @@
             this.imeitxt.Animated = true;
             this.imeitxt.AutoRoundedCorners = true;
             this.imeitxt.BorderColor = System.Drawing.Color.Black;
-            this.imeitxt.BorderRadius = 16;
+            this.imeitxt.BorderRadius = 20;
             this.imeitxt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.imeitxt.DefaultText = "";
             this.imeitxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -244,14 +242,14 @@
             this.imeitxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.imeitxt.ForeColor = System.Drawing.Color.Black;
             this.imeitxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.imeitxt.Location = new System.Drawing.Point(28, 185);
+            this.imeitxt.Location = new System.Drawing.Point(25, 175);
             this.imeitxt.MaxLength = 11;
             this.imeitxt.Name = "imeitxt";
             this.imeitxt.PasswordChar = '\0';
             this.imeitxt.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.imeitxt.PlaceholderText = "IMEI";
             this.imeitxt.SelectedText = "";
-            this.imeitxt.Size = new System.Drawing.Size(172, 35);
+            this.imeitxt.Size = new System.Drawing.Size(176, 42);
             this.imeitxt.TabIndex = 3;
             // 
             // guna2Button1
@@ -268,9 +266,9 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Black;
             this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(756, 171);
+            this.guna2Button1.Location = new System.Drawing.Point(607, 200);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(95, 30);
+            this.guna2Button1.Size = new System.Drawing.Size(110, 30);
             this.guna2Button1.TabIndex = 13;
             this.guna2Button1.Text = "ADD";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -290,7 +288,7 @@
             this.investornameCmb.ItemHeight = 30;
             this.investornameCmb.Location = new System.Drawing.Point(607, 129);
             this.investornameCmb.Name = "investornameCmb";
-            this.investornameCmb.Size = new System.Drawing.Size(160, 36);
+            this.investornameCmb.Size = new System.Drawing.Size(173, 36);
             this.investornameCmb.TabIndex = 7;
             this.investornameCmb.SelectedIndexChanged += new System.EventHandler(this.investornameCmb_SelectedIndexChanged);
             // 
@@ -336,7 +334,7 @@
             this.mobilenametxt.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mobilenametxt.ForeColor = System.Drawing.Color.Black;
             this.mobilenametxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.mobilenametxt.Location = new System.Drawing.Point(25, 68);
+            this.mobilenametxt.Location = new System.Drawing.Point(26, 68);
             this.mobilenametxt.Name = "mobilenametxt";
             this.mobilenametxt.PasswordChar = '\0';
             this.mobilenametxt.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -344,6 +342,7 @@
             this.mobilenametxt.SelectedText = "";
             this.mobilenametxt.Size = new System.Drawing.Size(410, 41);
             this.mobilenametxt.TabIndex = 1;
+            this.mobilenametxt.TextChanged += new System.EventHandler(this.mobilenametxt_TextChanged);
             // 
             // label2
             // 
@@ -366,32 +365,97 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(5, 308);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1353, 348);
+            this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
+            this.guna2CirclePictureBox1.ImageRotate = 0F;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(787, 133);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(25, 28);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 16;
+            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.guna2CirclePictureBox1_Click);
+            // 
+            // delbtn
+            // 
+            this.delbtn.Animated = true;
+            this.delbtn.AutoRoundedCorners = true;
+            this.delbtn.BackColor = System.Drawing.Color.Transparent;
+            this.delbtn.BorderRadius = 12;
+            this.delbtn.BorderThickness = 1;
+            this.delbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.delbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.delbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.delbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.delbtn.FillColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.delbtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.delbtn.ForeColor = System.Drawing.Color.White;
+            this.delbtn.Location = new System.Drawing.Point(865, 200);
+            this.delbtn.Name = "delbtn";
+            this.delbtn.Size = new System.Drawing.Size(107, 27);
+            this.delbtn.TabIndex = 18;
+            this.delbtn.Text = "DELETE";
+            this.delbtn.Click += new System.EventHandler(this.delbtn_Click);
+            // 
+            // Editbtn
+            // 
+            this.Editbtn.Animated = true;
+            this.Editbtn.AutoRoundedCorners = true;
+            this.Editbtn.BackColor = System.Drawing.Color.Transparent;
+            this.Editbtn.BorderRadius = 12;
+            this.Editbtn.BorderThickness = 1;
+            this.Editbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Editbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Editbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Editbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Editbtn.FillColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Editbtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.Editbtn.ForeColor = System.Drawing.Color.White;
+            this.Editbtn.Location = new System.Drawing.Point(736, 200);
+            this.Editbtn.Name = "Editbtn";
+            this.Editbtn.Size = new System.Drawing.Size(107, 27);
+            this.Editbtn.TabIndex = 17;
+            this.Editbtn.Text = "EDIT";
+            this.Editbtn.Click += new System.EventHandler(this.Editbtn_Click);
+            // 
             // Mobiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1362, 668);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "Mobiles";
             this.Text = "Mobiles";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.Mobiles_Activated);
             this.Load += new System.EventHandler(this.Mobiles_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox Searchtxt;
         private System.Windows.Forms.Panel panel1;
@@ -407,5 +471,9 @@
         private Guna.UI2.WinForms.Guna2TextBox openingStocktxt;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2TextBox saleRatetxt;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2Button delbtn;
+        private Guna.UI2.WinForms.Guna2Button Editbtn;
     }
 }

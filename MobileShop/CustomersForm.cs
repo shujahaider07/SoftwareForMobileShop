@@ -82,15 +82,12 @@ namespace MobileShop
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
-
-
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
             SqlConnection sql = new SqlConnection(cs);
             string qry = "select * from  tbl_customers where Customername like '%" + Searchtxt.Text + "%' ";
-
             SqlDataAdapter da = new SqlDataAdapter(qry, sql);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -119,7 +116,7 @@ namespace MobileShop
         public void styleGridView2()
         {
             dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Teal;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Empty;
             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Empty;
